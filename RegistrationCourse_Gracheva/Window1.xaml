@@ -1,0 +1,32 @@
+﻿<Window x:Class="RegistrationCourse_Gracheva.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistrationCourse_Gracheva"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <UniformGrid Columns="2">
+            <TextBlock> Trainer:</TextBlock>
+            <ComboBox Name="CmbTrainer" SelectedItem="{Binding Trainer}" DisplayMemberPath="Name"></ComboBox>
+            <TextBlock>Course:</TextBlock>
+            <ComboBox Name="CmbCourse" SelectedItem="{Binding Coutse}" DisplayMemberPath="Title"></ComboBox>
+            <TextBlock>Created Date:</TextBlock>
+            <DatePicker SelectedDate="{Binding CreateDate}"></DatePicker>
+            <TextBlock>Is Done:</TextBlock>
+            <CheckBox IsChecked="{Binding IsDone}">Done</CheckBox>
+            <TextBlock>Total Point</TextBlock>
+            <TextBox Text="{Binding TotalPoint}" Name="TxtTotalPoint"></TextBox>
+            <TextBlock>Certificate Image:</TextBlock>
+            <Image Source="{Binding CertificateImage}" Name="certificate"></Image>
+            <TextBox>Comment:</TextBox>
+            <TextBox Text="{Binding Comment}" MaxLength="100"></TextBox>
+        </UniformGrid>
+        <Button x:Name="BtnSave" Grid.Row="1" Click="BtnSave_Click">Save</Button>
+    </Grid>
+</Window>
